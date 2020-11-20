@@ -1,0 +1,10 @@
+div {
+    padding: 10px;
+    border: 2px solid green;
+}
+
+div div {
+    border: 2px solid orange;
+    background-color: greenyellow;
+    width: 30%;
+}

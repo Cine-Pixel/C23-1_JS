@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <title>Form</title>
+</head>
+
+<body>
+    <div>
+        <h1>This is H1</h1>
+        <p>This is paragraph</p>
+        <div>
+            <input type="text" placeholder="this is a textox"><br>
+            <button>This is a button</button>
+        </div>
+    </div>
+    <br>
+    <div>
+        <button onclick="changeParentNode()">ParentNode</button><br>
+        <button onclick="changeNextSibling()" disabled>NextSibling</button><br>
+        <button onclick="changePreviousSibling()" disabled>PreviousSibling</button><br>
+        <button onclick="changeFirstChild()">FirstChild</button><br>
+        <button>LastChild</button>
+    </div>
+
+    <script src="form.js"></script>
+</body>
+</html>
