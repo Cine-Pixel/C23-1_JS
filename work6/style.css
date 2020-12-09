@@ -30,7 +30,7 @@ button {
 }
 
 .calculator {
-    width: 50%;
+    width: 40%;
     background-color: grey;
     margin: auto;
     margin-top: 20px;
@@ -45,7 +45,7 @@ button {
 
 .calculator .buttons {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 5px;
 }
 
@@ -58,6 +58,11 @@ button {
     background-color: rgb(117, 117, 117);
 }
 
-.calculator .buttons div:last-child {
-    grid-column: 2/4;
+.span-2-h{
+    grid-column: 1/3;
+}
+
+.span-2-v{
+    grid-column: 4/4;
+    grid-row: 4/6;
 }
