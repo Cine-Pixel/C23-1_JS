@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Follow mouse</title>
+    <style>
+      .board {
+        width: 700px;
+        height: 400px;
+        margin: auto;
+        position: relative;
+        border: 1px solid #333;
+        overflow: hidden;
+      }
+      .box {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="board">
+      <div class="box"></div>
+    </div>
+    <script>
+      const board = document.querySelector(".board");
+      const box = document.querySelector(".box");
+      box.style.left = "0px";
+      box.style.top = "0px";
+
+      const move = (e) => {
+        if (board !== e.target) return;
+        console.log(e);
+        if (e.layerX < 2 || e.layerY < 2) {
+          box.style.display = "none";
+          return;
+        }
+        box.style.display = "block";
+        box.style.left = e.layerX + "px";
+        box.style.top = e.layerY + "px";
+      };
+
+      board.addEventListener("mousemove", move);
+    </script>
+  </body>
+</html>
