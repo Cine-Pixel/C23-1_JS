@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    background-color: #333;
+}
+
+nav {
+    width: 100%;
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    color: #fff;
+    font-size: 2rem;
+}
+
+nav .nav-items {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+nav ul {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+}
+nav ul li {
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+nav ul li:hover {
+    color: #333;
+}
+
+.slider-container {
+    width: 100%;
+}
+
+.slider-controls {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    z-index: 2;
+}
+
+.slider-controls .control{
+    padding: 1rem;
+    color: rgba(51, 51, 51, 0.5);
+    font-size: 2rem;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+
+.slider-controls .control:hover {
+    color: rgba(51, 51, 51, 1);
+}
+
+.circles {
+    width: 100px;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.circles .circle {
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    transition: all 1s;
+}
+
+.circle.active {
+    background-color: #fff;
+}
+
+.slider-items {
+    position: relative;
+    height: 100vh;
+}
+.slider-slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.7s;
+}
+
+.active {
+    opacity: 1;
+}
+
+.slider-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
