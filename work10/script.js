@@ -1,3 +1,13 @@
+// Navbar options
+const menuButton = document.querySelector(".hamburger");
+const menu = document.querySelector(".menu");
+
+menuButton.addEventListener("click", () => {
+  menu.classList.toggle("menu-open");
+  menuButton.classList.toggle("menu-open");
+});
+
+// Slider options
 const slides = document.querySelectorAll(".slider-slide");
 const circles = document.querySelectorAll(".circle");
 
@@ -6,7 +16,7 @@ const prev = document.getElementById("prev");
 
 let counter = 0;
 
-next.addEventListener("click", () => {
+const nextSlide = () => {
   slides[counter].classList.remove("active");
   circles[counter].classList.remove("active");
 
@@ -15,7 +25,9 @@ next.addEventListener("click", () => {
 
   slides[counter].classList.add("active");
   circles[counter].classList.add("active");
-});
+};
+
+next.addEventListener("click", nextSlide);
 
 prev.addEventListener("click", () => {
   slides[counter].classList.remove("active");
@@ -27,3 +39,5 @@ prev.addEventListener("click", () => {
   slides[counter].classList.add("active");
   circles[counter].classList.add("active");
 });
+
+setInterval(nextSlide, 5000);

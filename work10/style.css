@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,6 +8,7 @@
 
 body {
     background-color: #333;
+    font-family: 'Roboto', sans-serif;
 }
 
 nav {
@@ -23,6 +26,15 @@ nav .nav-items {
     margin: auto;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+nav .hamburger .line {
+    width: 100%;
+    height: 5px;
+    background-color: #fff;
+}
+nav .hamburger {
+    display: none;
 }
 nav ul {
     width: 40%;
@@ -42,6 +54,22 @@ nav ul li:hover {
 
 .slider-container {
     width: 100%;
+}
+
+.info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.info h1 {
+    font-size: 4rem;
 }
 
 .slider-controls {
@@ -111,4 +139,56 @@ nav ul li:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+@media screen and (max-width: 840px) {
+    nav .hamburger {
+        position: absolute;
+        right: 0;
+        transform: translateX(-100%);
+        width: 30px;
+        height: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+    nav .hamburger .line {
+        transition: all 0.5s ease-in-out;
+    }
+    nav .hamburger.menu-open .line {
+        background-color: #333;
+    }
+    nav .hamburger.menu-open .line:first-child {
+        transform: rotate(45deg) translate(10px, 10px);
+    }
+    nav .hamburger.menu-open .line:nth-child(2) {
+        display: none;
+        transform: translateX(-100%);
+    }
+    nav .hamburger.menu-open .line:last-child {
+        transform: rotate(-45deg) translate(8px, -8px);
+    }
+    nav ul {
+        position: absolute;
+        top: 0;
+        right: -100%;
+        width: 50%;
+        padding-top: 30px;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: flex-start;
+        background-color: #fff;
+        color: #333;
+        transition: all 0.5s;
+    }
+    nav ul li {
+        padding: 20px 0;
+    }
+    nav ul.menu-open {
+        right: 0;
+    }
+    nav ul.menu-open .mobile {
+        color: #333;
+    }
 }
